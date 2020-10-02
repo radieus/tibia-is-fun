@@ -31,7 +31,7 @@ def eatFood():
         if findImage(item):
             pyautogui.click(x=mx, y=my, button='right', clicks=5, interval=0.5)
             time.sleep(delay)
-        if isLast(meat, item) == False: # if found item is not the last, then the last one can be deleted
+        if item != meat[-1]:
             del meat[-1]
 
 
