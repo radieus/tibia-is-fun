@@ -17,7 +17,7 @@ def findImage(image):
     global my
     image = image + ".png"
     try:
-        mx, my = pyautogui.locateCenterOnScreen(image, region=(0, 0, 1920, 1080))
+        mx, my = pyautogui.locateCenterOnScreen(image, region=(960, 0, 1920, 1080))
         print("true for " + image)
         return True
     except:
@@ -60,11 +60,10 @@ print("palson powah")
 script_local_time = 0
 while running:
     try:
-        # directx scan codes https://gist.github.com/tracend/912308
-        # if (datetime.datetime.now().hour < 7) or (datetime.datetime.now().hour > 14):
-        makeRunes(hotkey)
-        # else:
-        # time.sleep(4)
+        if (datetime.datetime.now().hour < 10) or (datetime.datetime.now().hour > 20):
+            makeRunes(hotkey)
+        else:
+            time.sleep(4)
 
         if script_local_time >= food_delay:
             eatFood()
