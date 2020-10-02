@@ -2,6 +2,7 @@ import pyautogui
 import time
 import threading
 import sys
+import datetime
 
 delay = 1
 running = True
@@ -60,10 +61,7 @@ print("palson powah")
 script_local_time = 0
 while running:
     try:
-        if (datetime.datetime.now().hour < 10) or (datetime.datetime.now().hour > 20):
-            makeRunes(hotkey)
-        else:
-            time.sleep(4)
+        makeRunes(hotkey)
 
         if script_local_time >= food_delay:
             eatFood()
